@@ -64,9 +64,11 @@ def generar_visualizaciones(df_historico, df_predicciones):
         # Obtener la predicción para el producto.
         prediccion_producto = df_predicciones[df_predicciones['sap'] == sap].set_index('fecha_prediccion')['demanda_predicha']
 
-        # Información del modelo utilizado.
-        mejor_modelo = df_predicciones[df_predicciones['sap'] == sap]['mejor_modelo'].iloc[0]
-        rmse_modelo = df_predicciones[df_predicciones['sap'] == sap]['modelo_rmse'].iloc[0]
+        # Información del modelo y descripción del producto.
+        pred_info = df_predicciones[df_predicciones['sap'] == sap].iloc[0]
+        descripcion = pred_info['descripcion']
+        mejor_modelo = pred_info['mejor_modelo']
+        rmse_modelo = pred_info['modelo_rmse']
 
         # Crear el gráfico.
         plt.figure(figsize=(16, 8))
@@ -74,7 +76,7 @@ def generar_visualizaciones(df_historico, df_predicciones):
         plt.plot(serie_historica.index, serie_historica.values, label='Consumo Histórico', color='teal', marker='o', linestyle='-')
         plt.plot(prediccion_producto.index, prediccion_producto.values, label='Demanda Predicha', color='crimson', marker='x', linestyle='--')
 
-        plt.title(f'Predicción de Demanda para el Producto: {sap}\n(Mejor Modelo: {mejor_modelo} | RMSE: {rmse_modelo:.2f})')
+        plt.title(f'Predicción de Demanda para: {descripcion} (SAP: {sap})\n(Mejor Modelo: {mejor_modelo} | RMSE: {rmse_modelo:.2f})')
         plt.xlabel('Fecha')
         plt.ylabel('Consumo')
         plt.legend()
