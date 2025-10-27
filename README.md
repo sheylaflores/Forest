@@ -1,15 +1,17 @@
-# Análisis y Predicción de Demanda para Productos de Pesca
+# Análisis y Predicción de Demanda para Planificación de Inventario
 
 ## 1. Resumen del Proyecto
 
-Este proyecto tiene como objetivo analizar los datos históricos de consumo de la línea de negocio "HIDRÁULICA COMPONENTE" del sector pesca para predecir la demanda mensual de sus productos.
+Este proyecto analiza los datos históricos de consumo (2022-2025) de la línea de negocio "HIDRÁULICA COMPONENTE" para optimizar la planificación de inventario.
 
-El proceso completo incluye:
-- **Análisis Exploratorio de Datos (EDA)** para identificar tendencias y patrones.
-- **Implementación y Comparación de Modelos** de series temporales (ARIMA, SARIMA, XGBoost, RandomForest, Prophet).
-- **Selección Automática del Mejor Modelo** basado en el error cuadrático medio (RMSE).
-- **Generación de una Predicción** de la demanda para los próximos 12 meses.
-- **Recomendaciones Estratégicas** para la gestión de inventario.
+El enfoque se centra en **identificar los productos más críticos** (aquellos que generan el 80% del consumo) y desarrollar **predicciones de demanda individuales** para cada uno de ellos. Este método granular permite una gestión de stock mucho más precisa y eficiente.
+
+El proceso incluye:
+- **Análisis Exploratorio (EDA)** enfocado en el período 2022-2025, con visualizaciones anuales.
+- **Identificación de Productos Clave** mediante un análisis ABC (Pareto).
+- **Modelado Individual por Producto:** Se comparan 5 modelos de series temporales (ARIMA, SARIMA, XGBoost, RandomForest, Prophet) para cada producto clave.
+- **Selección del Mejor Modelo y Predicción a 12 Meses** para cada artículo.
+- **Visualización de Resultados** para los 5 productos más importantes.
 
 ---
 
@@ -18,19 +20,19 @@ El proceso completo incluye:
 ```
 .
 ├── data/
-│   └── kardexASTEC_filtrado.xlsx   # Datos históricos de consumo (entrada)
+│   └── kardexASTEC_filtrado.xlsx
 ├── output/
-│   ├── evaluacion_modelos.csv        # Resultados de la evaluación de los modelos
-│   ├── prediccion_demanda_pesca.csv  # Predicción final a 12 meses
-│   ├── tendencia_consumo_mensual.png # Gráfico de tendencia mensual
-│   ├── top_productos_consumo.png     # Gráfico de consumo por producto
-│   └── prediccion_final_con_historico.png # Gráfico final con la predicción
+│   ├── consumo_mensual_2022.png
+│   ├── consumo_mensual_2023.png
+│   ├── ... (más gráficos)
+│   ├── predicciones_por_producto.csv
+│   └── productos_clave.txt
 ├── src/
-│   ├── analisis_exploratorio.py      # Script para el EDA
-│   ├── entrenamiento_modelos.py    # Script para entrenar y evaluar modelos
-│   └── generar_predicciones.py     # Script para generar la predicción final
-├── requirements.txt                  # Dependencias de Python
-└── README.md                         # Este archivo
+│   ├── analisis_exploratorio.py
+│   └── prediccion_por_producto.py
+│   └── visualizar_predicciones.py
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -38,105 +40,82 @@ El proceso completo incluye:
 ## 3. Cómo Ejecutar el Proyecto
 
 ### a. Prerrequisitos
-- Tener Python 3.8 o superior instalado.
-- Tener `pip` (gestor de paquetes de Python) disponible.
+- Python 3.8 o superior.
+- `pip` instalado.
 
 ### b. Pasos para la Ejecución
-1. **Clonar el repositorio:**
-   ```bash
-   git clone <URL-del-repositorio>
-   cd <nombre-del-repositorio>
-   ```
-
-2. **Instalar las dependencias:**
+1. **Instalar las dependencias:**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Ejecutar los scripts en orden:**
-   - **Paso 1: Análisis Exploratorio** (genera los primeros gráficos en `output/`)
+2. **Ejecutar los scripts en orden:**
+   - **Paso 1: Análisis Exploratorio e Identificación de Productos**
      ```bash
      python3 src/analisis_exploratorio.py
      ```
-   - **Paso 2: Entrenamiento y Evaluación de Modelos** (compara modelos y guarda los resultados)
+   - **Paso 2: Entrenamiento y Predicción por Producto**
+     *Este proceso puede tardar varios minutos, ya que entrena modelos para ~90 productos.*
      ```bash
-     python3 src/entrenamiento_modelos.py
+     python3 src/prediccion_por_producto.py
      ```
-   - **Paso 3: Generación de la Predicción Final** (usa el mejor modelo para predecir a 12 meses)
+   - **Paso 3: Visualización de Resultados para Productos Top**
      ```bash
-     python3 src/generar_predicciones.py
+     python3 src/visualizar_predicciones.py
      ```
 
 ---
 
-## 4. Análisis Exploratorio de Datos (EDA)
+## 4. Análisis Exploratorio (2022-2025)
 
-### a. Tendencia de Consumo Mensual
-El consumo total mensual muestra una alta variabilidad, con picos significativos que podrían corresponder a las temporadas de pesca. No se observa una tendencia clara de crecimiento o decrecimiento a largo plazo, sino más bien un comportamiento cíclico.
+### a. Consumo Mensual por Año
+El análisis por año revela patrones y picos de demanda que varían anualmente, lo que refuerza la necesidad de un modelo que se adapte a estas fluctuaciones.
 
-![Tendencia de Consumo Mensual](output/tendencia_consumo_mensual.png)
+![Consumo 2022](output/consumo_mensual_2022.png)
+![Consumo 2023](output/consumo_mensual_2023.png)
+![Consumo 2024](output/consumo_mensual_2024.png)
 
-### b. Productos con Mayor Consumo
-Un número reducido de productos (identificados por su código SAP) concentra la mayor parte del consumo. El producto `A18110011069` es, con diferencia, el más demandado.
-
-![Top 10 Productos por Consumo](output/top_productos_consumo.png)
-
-### c. Estadísticas Clave del Consumo Mensual
-- **Media:** 256.2
-- **Desviación Estándar:** 367.4 (indica alta volatilidad)
-- **Mínimo:** 1.0
-- **Máximo:** 2431.8
+### b. Identificación de Productos Clave
+El análisis ABC (Pareto) demostró que **90 de 666 productos (el 13.5%) son responsables del 80% del consumo total**. Este hallazgo es fundamental, ya que permite a la empresa centrar sus esfuerzos de planificación en un grupo manejable de artículos de alto impacto.
 
 ---
 
-## 5. Comparación y Selección del Modelo
+## 5. Predicción de Demanda por Producto
 
-Se evaluaron cinco modelos diferentes para predecir la demanda. El **modelo ARIMA** fue seleccionado automáticamente como el mejor debido a su **Error Cuadrático Medio (RMSE)**, que fue significativamente más bajo que el de los otros modelos.
+Para cada uno de los 90 productos clave, se realizó un "campeonato de modelos", donde ARIMA, SARIMA, RandomForest, XGBoost y Prophet compitieron. El modelo con el menor Error Cuadrático Medio (RMSE) fue seleccionado y utilizado para generar un pronóstico a 12 meses.
 
-| Modelo       | MAE      | RMSE     | MAPE (%) |
-|--------------|----------|----------|----------|
-| **ARIMA**    | **53.18**| **70.84**| **39.49**|
-| SARIMA       | 198.80   | 381.78   | 210.34   |
-| RandomForest | 148.15   | 246.81   | 165.35   |
-| XGBoost      | 160.70   | 269.67   | 141.76   |
-| Prophet      | 115.05   | 140.10   | 113.62   |
+Este enfoque asegura que cada producto sea modelado con la técnica que mejor se ajusta a su patrón de demanda específico.
 
-*El **RMSE** es una métrica clave porque penaliza más los errores grandes, lo que es crucial para evitar grandes desviaciones en la planificación del inventario.*
+### Resultados para los 5 Productos Principales
+A continuación se muestran los resultados para los 5 productos más consumidos:
 
----
+**1. Producto: A18110011069**
+![Predicción A18110011069](output/prediccion_producto_A18110011069.png)
 
-## 6. Predicción de Demanda para los Próximos 12 Meses
+**2. Producto: A19010000519**
+![Predicción A19010000519](output/prediccion_producto_A19010000519.png)
 
-El modelo ARIMA fue re-entrenado con todos los datos históricos para generar la siguiente predicción:
+**3. Producto: A18110011082**
+![Predicción A18110011082](output/prediccion_producto_A18110011082.png)
 
-![Predicción de Demanda a 12 Meses](output/prediccion_final_con_historico.png)
+**4. Producto: A22020000062**
+![Predicción A22020000062](output/prediccion_producto_A22020000062.png)
 
-### Tabla de Predicción
-A continuación se muestra la demanda predicha, junto con los intervalos de confianza del 95%.
+**5. Producto: A18130005783**
+![Predicción A18130005783](output/prediccion_producto_A18130005783.png)
 
-| Fecha      | Predicción | Límite Inferior | Límite Superior |
-|------------|------------|-----------------|-----------------|
-| 2025-11-30 | 114.69     | -595.44         | 824.82          |
-| 2025-12-31 | 124.35     | -607.57         | 856.26          |
-| 2026-01-31 | 99.61      | -651.13         | 850.34          |
-| 2026-02-28 | 108.78     | -660.95         | 878.51          |
-| ...        | ...        | ...             | ...             |
-
-*La tabla completa se encuentra en `output/prediccion_demanda_pesca.csv`.*
+*Las predicciones completas para los 90 productos se encuentran en `output/predicciones_por_producto.csv`.*
 
 ---
 
-## 7. Conclusiones y Recomendaciones
+## 6. Conclusiones y Recomendaciones
 
-### a. Mejor Modelo y Patrones Detectados
-- **Mejor Modelo:** El modelo estadístico **ARIMA** superó a los modelos de machine learning y a Prophet. Esto sugiere que la demanda se explica mejor por sus propios valores pasados (autocorrelación) que por características de calendario complejas.
-- **Patrones Estacionales:** Aunque el modelo SARIMA (diseñado para estacionalidad) no fue el mejor, los picos de demanda en el análisis exploratorio sugieren una fuerte relación con las **temporadas de pesca**. La alta volatilidad de la demanda es el principal desafío.
+### a. Hallazgos Clave
+- **La demanda es altamente concentrada:** Un pequeño subconjunto de productos (13.5%) es vital para el negocio. La estrategia de inventario debe priorizar estos artículos.
+- **No hay un "modelo único para todos":** Diferentes productos tienen diferentes patrones de demanda. La selección de modelos individuales (por ejemplo, ARIMA para un producto, XGBoost para otro) aumenta significativamente la precisión del pronóstico general.
 
-### b. Recomendaciones para la Empresa
-1.  **Enfoque en Productos Clave:** Dado que pocos productos representan la mayor parte del consumo, la empresa debe centrarse en mantener un **stock de seguridad robusto** para los SAP `A18110011069` y `A19010000519`.
-2.  **Monitoreo Continuo:** La predicción muestra una tendencia a estabilizarse, pero los intervalos de confianza son amplios debido a la volatilidad histórica. Se recomienda **re-entrenar el modelo mensualmente** con nuevos datos para ajustar las predicciones.
-3.  **Integrar Variables Externas:** Para mejorar la precisión, se podría enriquecer el modelo con datos externos como:
-    - **Calendarios de vedas y temporadas de pesca.**
-    - **Datos macroeconómicos** del sector pesquero.
-    - **Información de los clientes** sobre sus planes de operación.
-4.  **Gestión de Inventario Flexible:** En lugar de confiar únicamente en la predicción media, la empresa debería utilizar los **intervalos de confianza** para planificar escenarios optimistas y pesimistas, ajustando los niveles de inventario de forma más dinámica.
+### b. Recomendaciones Estratégicas
+1.  **Inventario Diferenciado:** Utilizar las predicciones individuales para establecer **niveles de stock de seguridad dinámicos** para cada uno de los 90 productos clave. Los productos de menor consumo pueden gestionarse con políticas más simples (ej. punto de reorden).
+2.  **Revisión y Re-entrenamiento Periódico:** La demanda puede cambiar. Se recomienda **ejecutar este análisis trimestralmente** para actualizar la lista de productos clave y re-entrenar los modelos con los datos más recientes.
+3.  **Análisis de Causa Raíz:** Para los productos top con alta volatilidad, investigar las **causas de los picos de demanda**. ¿Corresponden a proyectos específicos, temporadas de pesca, o promociones? Integrar esta información puede mejorar aún más la precisión.
+4.  **Gestión Proactiva:** Utilizar las predicciones para **anticipar futuras necesidades de compra** y negociar mejores condiciones con los proveedores basándose en pronósticos de volumen a mediano plazo.

@@ -2,129 +2,67 @@
 """
 Script para el Análisis Exploratorio de Datos (EDA) de la demanda de productos.
 
-Este script carga los datos históricos de consumo, realiza una limpieza y
-preprocesamiento inicial, y genera visualizaciones clave para entender las
-tendencias y patrones de la demanda.
+Este script carga los datos históricos, los filtra para el período 2022-2025,
+genera visualizaciones anuales y mensuales, e identifica los productos clave
+para la planificación de inventario utilizando un análisis ABC (Pareto).
 """
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import numpy as np
 
 # --- Configuración de Estilo para Gráficos ---
-# Utiliza un estilo profesional y legible para las visualizaciones.
 sns.set(style="whitegrid")
 plt.rcParams['figure.figsize'] = (15, 7)
 plt.rcParams['axes.titlesize'] = 16
 plt.rcParams['axes.labelsize'] = 14
-plt.rcParams['xtick.labelsize'] = 12
-plt.rcParams['ytick.labelsize'] = 12
 
 # --- Carga de Datos ---
-# Define la ruta al archivo de datos. Es una buena práctica para la reproducibilidad.
 DATA_PATH = 'data/kardexASTEC_filtrado.xlsx'
 OUTPUT_DIR = 'output'
 
-# Crea el directorio de salida si no existe.
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
-def cargar_datos(path):
+def cargar_y_preprocesar_datos(path):
     """
-    Carga los datos desde un archivo Excel.
+    Carga, limpia y preprocesa los datos para el análisis.
 
     Args:
         path (str): Ruta al archivo .xlsx.
 
     Returns:
-        pd.DataFrame: DataFrame con los datos cargados.
-        Retorna None si el archivo no se encuentra.
+        pd.DataFrame: DataFrame preprocesado y listo para el análisis.
     """
     try:
-        # Lee el archivo Excel y lo convierte en un DataFrame de pandas.
         df = pd.read_excel(path)
         print(">>> Datos cargados exitosamente.")
-        return df
     except FileNotFoundError:
-        # Manejo de error en caso de que el archivo no exista.
         print(f"Error: El archivo no se encontró en la ruta: {path}")
         return None
 
-# --- Funciones de Análisis y Visualización ---
-
-def analisis_exploratorio(df):
-    """
-    Realiza un análisis exploratorio básico de los datos.
-
-    Args:
-        df (pd.DataFrame): DataFrame con los datos de consumo.
-    """
-    if df is None:
-        return
-
-    # Muestra las primeras 5 filas para una vista previa de los datos.
-    print("\n--- Vista Previa de los Datos ---")
-    print(df.head())
-
-    # Proporciona un resumen conciso del DataFrame.
-    print("\n--- Información General del DataFrame ---")
-    df.info()
-
-    # Muestra estadísticas descriptivas para las columnas numéricas.
-    print("\n--- Estadísticas Descriptivas ---")
-    # Se seleccionan solo las columnas numéricas para el análisis.
-    print(df.describe(include='number'))
-
-def preprocesamiento_datos(df):
-    """
-    Limpia y preprocesa los datos para el análisis de series temporales.
-
-    Args:
-        df (pd.DataFrame): DataFrame original.
-
-    Returns:
-        pd.DataFrame: DataFrame preprocesado y listo para el análisis.
-    """
-    if df is None:
-        return None
-
-    print("\n--- Preprocesamiento de Datos ---")
-    # Se crea una copia para evitar advertencias de 'SettingWithCopyWarning'.
-    df_copy = df.copy()
-
-    # Renombrar columnas a nombres más manejables y consistentes.
-    df_copy.rename(columns={
+    df.rename(columns={
         'month_year': 'fecha',
         'Consumo Total': 'consumo',
         'SAP': 'sap'
     }, inplace=True)
-    print("Columnas renombradas para mayor claridad.")
 
-    # Convierte la columna 'fecha' a formato de fecha y hora.
-    # `errors='coerce'` convierte las fechas inválidas en NaT (Not a Time).
-    df_copy['fecha'] = pd.to_datetime(df_copy['fecha'], errors='coerce')
-    print("Columna 'fecha' convertida a tipo datetime.")
+    df['fecha'] = pd.to_datetime(df['fecha'], errors='coerce')
+    df.dropna(subset=['fecha', 'consumo', 'sap'], inplace=True)
 
-    # Elimina filas donde la fecha no pudo ser convertida (si las hay).
-    df_copy.dropna(subset=['fecha'], inplace=True)
-    print("Filas con fechas inválidas eliminadas.")
+    # --- Filtrado de Fechas: 2022 en adelante ---
+    df = df[df['fecha'] >= '2022-01-01']
+    print(f">>> Datos filtrados para el período de 2022 a {df['fecha'].max().year}.")
 
-    # Asegura que 'consumo' y 'sap' no tengan valores nulos que afecten los cálculos.
-    df_copy.dropna(subset=['consumo', 'sap'], inplace=True)
-    print("Filas con valores nulos en 'consumo' o 'sap' eliminadas.")
+    df.set_index('fecha', inplace=True)
+    df.sort_index(inplace=True)
 
-    # Establece la 'fecha' como el índice del DataFrame, crucial para series temporales.
-    df_copy.set_index('fecha', inplace=True)
+    return df
 
-    # Ordena los datos por fecha para asegurar la secuencia temporal correcta.
-    df_copy.sort_index(inplace=True)
-    print("DataFrame indexado y ordenado por fecha.")
-
-    return df_copy
-
-def visualizar_tendencia_mensual(df):
+def visualizar_consumo_por_año(df):
     """
-    Calcula y visualiza la tendencia de consumo total mensual.
+    Genera y guarda un gráfico de consumo mensual para cada año en el DataFrame.
 
     Args:
         df (pd.DataFrame): DataFrame preprocesado.
@@ -132,59 +70,76 @@ def visualizar_tendencia_mensual(df):
     if df is None:
         return
 
-    # Agrupa los datos por mes y suma el consumo. 'M' indica frecuencia mensual.
-    consumo_mensual = df['consumo'].resample('M').sum()
+    años = df.index.year.unique()
 
-    print("\n--- Estadísticas del Consumo Mensual ---")
-    print(consumo_mensual.describe())
+    print("\n--- Generando gráficos de consumo mensual por año ---")
 
-    # Creación del gráfico de tendencia mensual.
-    plt.figure()
-    consumo_mensual.plot(title='Tendencia Mensual de Consumo Total', color='teal')
-    plt.xlabel('Fecha')
-    plt.ylabel('Consumo Total')
-    plt.grid(True, which='both', linestyle='--', linewidth=0.5)
+    for año in años:
+        # Filtra los datos para el año actual.
+        df_año = df[df.index.year == año]
+        # Agrupa por mes.
+        consumo_mensual_año = df_año['consumo'].resample('ME').sum()
 
-    # Guarda el gráfico en el directorio de salida.
-    plot_path = os.path.join(OUTPUT_DIR, 'tendencia_consumo_mensual.png')
-    plt.savefig(plot_path)
-    print(f"\n>>> Gráfico de tendencia mensual guardado en: {plot_path}")
-    # plt.show() # Descomentar si se ejecuta localmente y se desea ver el gráfico.
+        # Completa los meses faltantes con ceros para tener un gráfico de 12 meses.
+        idx = pd.date_range(f'01-01-{año}', f'12-31-{año}', freq='ME')
+        consumo_mensual_año = consumo_mensual_año.reindex(idx, fill_value=0)
 
-def visualizar_top_productos(df, top_n=10):
+        plt.figure(figsize=(12, 6))
+        consumo_mensual_año.plot(kind='bar', color=sns.color_palette('viridis', 12))
+        plt.title(f'Consumo Mensual del Año {año}')
+        plt.xlabel('Mes')
+        plt.ylabel('Consumo Total')
+        plt.xticks(ticks=range(len(consumo_mensual_año)), labels=[d.strftime('%b') for d in consumo_mensual_año.index], rotation=45)
+        plt.tight_layout()
+
+        plot_path = os.path.join(OUTPUT_DIR, f'consumo_mensual_{año}.png')
+        plt.savefig(plot_path)
+        print(f">>> Gráfico para el año {año} guardado en: {plot_path}")
+        plt.close()
+
+def identificar_productos_clave(df):
     """
-    Visualiza el consumo de los N productos principales.
+    Identifica los productos clave utilizando el análisis ABC (Pareto 80/20).
+    Selecciona los productos que contribuyen al 80% del consumo total.
 
     Args:
-        df (pd.DataFrame): DataFrame preprocesado.
-        top_n (int): Número de productos a mostrar en el ranking.
+        df (pd.DataFrame): DataFrame con los datos de consumo.
+
+    Returns:
+        list: Una lista con los códigos SAP de los productos clave.
     """
     if df is None:
-        return
+        return []
 
-    # Agrupa por 'sap' (producto) y suma el consumo para encontrar los más vendidos.
+    print("\n--- Identificando productos clave (Análisis ABC) ---")
+
+    # Calcula el consumo total por producto.
     consumo_por_producto = df.groupby('sap')['consumo'].sum().sort_values(ascending=False)
 
-    # Selecciona los 'top_n' productos con mayor consumo.
-    top_productos = consumo_por_producto.head(top_n)
+    # Calcula el porcentaje acumulado.
+    consumo_acumulado = consumo_por_producto.cumsum()
+    consumo_total = consumo_por_producto.sum()
+    porcentaje_acumulado = (consumo_acumulado / consumo_total) * 100
 
-    print(f"\n--- Top {top_n} Productos con Mayor Consumo ---")
-    print(top_productos)
+    # Identifica los productos que caen dentro del 80% del consumo.
+    productos_clave = porcentaje_acumulado[porcentaje_acumulado <= 80].index.tolist()
 
-    # Creación del gráfico de barras para los productos principales.
-    plt.figure()
-    top_productos.plot(kind='bar', color=sns.color_palette('viridis', top_n))
-    plt.title(f'Consumo por los {top_n} Productos Principales (SAP)')
-    plt.xlabel('Código SAP del Producto')
-    plt.ylabel('Consumo Total')
-    plt.xticks(rotation=45, ha='right')
-    plt.tight_layout() # Ajusta el gráfico para que no se corten las etiquetas.
+    num_total_productos = len(consumo_por_producto)
+    num_productos_clave = len(productos_clave)
+    porcentaje_productos = (num_productos_clave / num_total_productos) * 100
 
-    # Guarda el gráfico.
-    plot_path = os.path.join(OUTPUT_DIR, 'top_productos_consumo.png')
-    plt.savefig(plot_path)
-    print(f">>> Gráfico de top productos guardado en: {plot_path}")
-    # plt.show() # Descomentar para visualización interactiva.
+    print(f">>> {num_productos_clave} de {num_total_productos} productos ({porcentaje_productos:.2f}%) representan el 80% del consumo total.")
+    print("Productos clave identificados:")
+    for sap in productos_clave:
+        print(f"  - {sap}")
+
+    # Guardar la lista de productos clave en un archivo.
+    with open(os.path.join(OUTPUT_DIR, 'productos_clave.txt'), 'w') as f:
+        for sap in productos_clave:
+            f.write(f"{sap}\n")
+    print(f"\n>>> Lista de productos clave guardada en: {os.path.join(OUTPUT_DIR, 'productos_clave.txt')}")
+
+    return productos_clave
 
 # --- Bloque Principal de Ejecución ---
 
@@ -192,21 +147,16 @@ def main():
     """
     Función principal que orquesta la ejecución del script de EDA.
     """
-    # Paso 1: Cargar los datos.
-    df_raw = cargar_datos(DATA_PATH)
+    # Paso 1: Cargar y preprocesar los datos.
+    df_processed = cargar_y_preprocesar_datos(DATA_PATH)
 
-    # Paso 2: Realizar el análisis exploratorio inicial.
-    analisis_exploratorio(df_raw)
+    # Paso 2: Generar visualizaciones anuales.
+    visualizar_consumo_por_año(df_processed)
 
-    # Paso 3: Preprocesar los datos.
-    df_processed = preprocesamiento_datos(df_raw)
+    # Paso 3: Identificar y guardar los productos más importantes.
+    identificar_productos_clave(df_processed)
 
-    # Paso 4: Generar visualizaciones.
-    if df_processed is not None:
-        visualizar_tendencia_mensual(df_processed)
-        visualizar_top_productos(df_processed)
-        print("\n>>> Análisis exploratorio completado. Los gráficos se han guardado en la carpeta 'output'.")
+    print("\n>>> Análisis exploratorio actualizado completado.")
 
 if __name__ == "__main__":
-    # Esta construcción asegura que el script solo se ejecute cuando es llamado directamente.
     main()
