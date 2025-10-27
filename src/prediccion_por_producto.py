@@ -157,6 +157,9 @@ def generar_prediccion_final(serie_completa, nombre_modelo, n_meses=12):
     else: # Fallback
         return pd.Series([0]*n_meses, index=fechas_futuras)
 
+    # Corregir predicciones negativas, ajustándolas a cero.
+    prediccion = prediccion.clip(lower=0)
+
     return prediccion.round(2) # Redondear a 2 decimales.
 
 

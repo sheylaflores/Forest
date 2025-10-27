@@ -86,6 +86,8 @@ Para cada uno de los 90 productos clave, se realizó un "campeonato de modelos",
 
 Este enfoque asegura que cada producto sea modelado con la técnica que mejor se ajusta a su patrón de demanda específico.
 
+*Nota importante: Para garantizar predicciones realistas, cualquier valor de pronóstico negativo generado por los modelos se ajusta automáticamente a cero, ya que no es posible tener una demanda negativa.*
+
 ### Resultados para los 5 Productos Principales
 A continuación se muestran los resultados para los 5 productos más consumidos:
 
