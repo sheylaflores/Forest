@@ -1,0 +1,17 @@
+# Archivos generados por los scripts
+/output/
+
+# Archivos de cache y compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

@@ -3,8 +3,8 @@
 Script para el Análisis Exploratorio de Datos (EDA) de la demanda de productos.
 
 Este script carga los datos históricos, los filtra para el período 2022-2025,
-genera visualizaciones anuales y mensuales, e identifica los productos clave
-para la planificación de inventario utilizando un análisis ABC (Pareto).
+excluye productos de marcas genéricas, genera visualizaciones anuales,
+e identifica los productos clave para la planificación de inventario.
 """
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -12,81 +12,96 @@ import seaborn as sns
 import os
 import numpy as np
 
-# --- Configuración de Estilo para Gráficos ---
+# --- Configuración ---
 sns.set(style="whitegrid")
 plt.rcParams['figure.figsize'] = (15, 7)
 plt.rcParams['axes.titlesize'] = 16
 plt.rcParams['axes.labelsize'] = 14
 
-# --- Carga de Datos ---
-DATA_PATH = 'data/kardexASTEC_filtrado.xlsx'
+# --- Rutas de Archivos ---
+CONSUMO_DATA_PATH = 'data/kardexASTEC_filtrado.xlsx'
+SAP_INFO_PATH = 'data/14.06 MP_ARTICULOS_SAP.xlsx'
 OUTPUT_DIR = 'output'
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
 
-def cargar_y_preprocesar_datos(path):
+def cargar_y_filtrar_datos(consumo_path, sap_info_path):
     """
-    Carga, limpia y preprocesa los datos para el análisis.
-
-    Args:
-        path (str): Ruta al archivo .xlsx.
+    Carga los datos de consumo y la información de SAP, filtra las marcas
+    no deseadas ("MATERIALES VARIOS", "GENÉRICO") y preprocesa el DataFrame.
 
     Returns:
-        pd.DataFrame: DataFrame preprocesado y listo para el análisis.
+        pd.DataFrame: DataFrame preprocesado y filtrado, listo para el análisis.
     """
+    # 1. Cargar la información de SAP para obtener las marcas
     try:
-        df = pd.read_excel(path)
-        print(">>> Datos cargados exitosamente.")
+        df_sap = pd.read_excel(sap_info_path, usecols=['Codigo_SAP', 'Marca'])
+        df_sap.rename(columns={'Codigo_SAP': 'sap'}, inplace=True)
     except FileNotFoundError:
-        print(f"Error: El archivo no se encontró en la ruta: {path}")
+        print(f"Error: No se encontró el archivo de información de SAP en: {sap_info_path}")
+        return None
+    except Exception as e:
+        print(f"Error al leer el archivo SAP: {e}")
         return None
 
-    df.rename(columns={
+    # 2. Identificar los SAP a excluir
+    marcas_a_excluir = ['MATERIALES VARIOS', 'GENÉRICO']
+    saps_a_excluir = df_sap[df_sap['Marca'].isin(marcas_a_excluir)]['sap'].unique().tolist()
+    print(f">>> Se han identificado {len(saps_a_excluir)} productos de marcas a excluir.")
+
+    # 3. Cargar los datos de consumo
+    try:
+        df_consumo = pd.read_excel(consumo_path)
+        print(">>> Datos de consumo cargados exitosamente.")
+    except FileNotFoundError:
+        print(f"Error: El archivo de consumo no se encontró en la ruta: {consumo_path}")
+        return None
+
+    # 4. Preprocesar y filtrar el DataFrame de consumo
+    df_consumo.rename(columns={
         'month_year': 'fecha',
         'Consumo Total': 'consumo',
         'SAP': 'sap'
     }, inplace=True)
 
-    df['fecha'] = pd.to_datetime(df['fecha'], errors='coerce')
-    df.dropna(subset=['fecha', 'consumo', 'sap'], inplace=True)
+    df_consumo['fecha'] = pd.to_datetime(df_consumo['fecha'], errors='coerce')
+    df_consumo.dropna(subset=['fecha', 'consumo', 'sap'], inplace=True)
 
-    # --- Filtrado de Fechas: 2022 en adelante ---
-    df = df[df['fecha'] >= '2022-01-01']
-    print(f">>> Datos filtrados para el período de 2022 a {df['fecha'].max().year}.")
+    # Aplicar el filtro por fecha
+    df_consumo = df_consumo[df_consumo['fecha'] >= '2022-01-01']
+    print(f">>> Datos filtrados para el período de 2022 a {df_consumo['fecha'].max().year}.")
 
-    df.set_index('fecha', inplace=True)
-    df.sort_index(inplace=True)
+    # Aplicar el filtro por marca
+    registros_antes = len(df_consumo)
+    df_consumo = df_consumo[~df_consumo['sap'].isin(saps_a_excluir)]
+    registros_despues = len(df_consumo)
+    print(f">>> Se han filtrado {registros_antes - registros_despues} registros de consumo pertenecientes a las marcas excluidas.")
 
-    return df
+    df_consumo.set_index('fecha', inplace=True)
+    df_consumo.sort_index(inplace=True)
+
+    return df_consumo
 
 def visualizar_consumo_por_año(df):
     """
     Genera y guarda un gráfico de consumo mensual para cada año en el DataFrame.
-
-    Args:
-        df (pd.DataFrame): DataFrame preprocesado.
     """
     if df is None:
         return
 
     años = df.index.year.unique()
-
-    print("\n--- Generando gráficos de consumo mensual por año ---")
+    print("\n--- Generando gráficos de consumo mensual por año (filtrado) ---")
 
     for año in años:
-        # Filtra los datos para el año actual.
         df_año = df[df.index.year == año]
-        # Agrupa por mes.
         consumo_mensual_año = df_año['consumo'].resample('ME').sum()
-
-        # Completa los meses faltantes con ceros para tener un gráfico de 12 meses.
         idx = pd.date_range(f'01-01-{año}', f'12-31-{año}', freq='ME')
         consumo_mensual_año = consumo_mensual_año.reindex(idx, fill_value=0)
 
         plt.figure(figsize=(12, 6))
         consumo_mensual_año.plot(kind='bar', color=sns.color_palette('viridis', 12))
-        plt.title(f'Consumo Mensual del Año {año}')
+        plt.title(f'Consumo Mensual del Año {año} (Marcas Relevantes)')
         plt.xlabel('Mes')
         plt.ylabel('Consumo Total')
         plt.xticks(ticks=range(len(consumo_mensual_año)), labels=[d.strftime('%b') for d in consumo_mensual_año.index], rotation=45)
@@ -100,28 +115,17 @@ def visualizar_consumo_por_año(df):
 def identificar_productos_clave(df):
     """
     Identifica los productos clave utilizando el análisis ABC (Pareto 80/20).
-    Selecciona los productos que contribuyen al 80% del consumo total.
-
-    Args:
-        df (pd.DataFrame): DataFrame con los datos de consumo.
-
-    Returns:
-        list: Una lista con los códigos SAP de los productos clave.
     """
     if df is None:
         return []
 
-    print("\n--- Identificando productos clave (Análisis ABC) ---")
+    print("\n--- Identificando productos clave (Análisis ABC sobre datos filtrados) ---")
 
-    # Calcula el consumo total por producto.
     consumo_por_producto = df.groupby('sap')['consumo'].sum().sort_values(ascending=False)
-
-    # Calcula el porcentaje acumulado.
     consumo_acumulado = consumo_por_producto.cumsum()
     consumo_total = consumo_por_producto.sum()
     porcentaje_acumulado = (consumo_acumulado / consumo_total) * 100
 
-    # Identifica los productos que caen dentro del 80% del consumo.
     productos_clave = porcentaje_acumulado[porcentaje_acumulado <= 80].index.tolist()
 
     num_total_productos = len(consumo_por_producto)
@@ -129,15 +133,12 @@ def identificar_productos_clave(df):
     porcentaje_productos = (num_productos_clave / num_total_productos) * 100
 
     print(f">>> {num_productos_clave} de {num_total_productos} productos ({porcentaje_productos:.2f}%) representan el 80% del consumo total.")
-    print("Productos clave identificados:")
-    for sap in productos_clave:
-        print(f"  - {sap}")
+    print(f"Productos clave identificados (filtrados): {num_productos_clave}")
 
-    # Guardar la lista de productos clave en un archivo.
     with open(os.path.join(OUTPUT_DIR, 'productos_clave.txt'), 'w') as f:
         for sap in productos_clave:
             f.write(f"{sap}\n")
-    print(f"\n>>> Lista de productos clave guardada en: {os.path.join(OUTPUT_DIR, 'productos_clave.txt')}")
+    print(f"\n>>> Lista de productos clave (filtrada) guardada en: {os.path.join(OUTPUT_DIR, 'productos_clave.txt')}")
 
     return productos_clave
 
@@ -147,16 +148,11 @@ def main():
     """
     Función principal que orquesta la ejecución del script de EDA.
     """
-    # Paso 1: Cargar y preprocesar los datos.
-    df_processed = cargar_y_preprocesar_datos(DATA_PATH)
-
-    # Paso 2: Generar visualizaciones anuales.
+    df_processed = cargar_y_filtrar_datos(CONSUMO_DATA_PATH, SAP_INFO_PATH)
     visualizar_consumo_por_año(df_processed)
-
-    # Paso 3: Identificar y guardar los productos más importantes.
     identificar_productos_clave(df_processed)
 
-    print("\n>>> Análisis exploratorio actualizado completado.")
+    print("\n>>> Análisis exploratorio actualizado con filtro de marca completado.")
 
 if __name__ == "__main__":
     main()
