@@ -1,10 +1,9 @@
 pandas
 openpyxl
 matplotlib
-plotly
+seaborn
 scikit-learn
 statsmodels
 xgboost
 prophet
-seaborn
 tqdm
