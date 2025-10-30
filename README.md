@@ -13,8 +13,9 @@ El portal **Observatorio PRODUCEmpresarial** ofrece información mensual (setiem
 Recurso: https://www.producempresarial.pe/pesca-tablero/
 
 Ficha Tecnica de la ANCHOVETA: https://www.producempresarial.pe/desenvolvimiento-socioeconomico-del-recurso-anchoveta-chi/
+
 #### Índice de estacionalidad y pronóstico del desempeño pesquero
-![Consumo 2022](output/Estacionalidad Pesca Anchoveta.png)
+(output/Estacionalidad Pesca Anchoveta.png)
 **Análisis:** El consumo en 2022 muestra picos claros en los meses definidos como "temporada de pesca" (Abril, Noviembre-Diciembre), validando la relevancia de esta variable.
 
 
