@@ -5,9 +5,19 @@
 
 ---
 
-## 1. Introducción y Objetivos
+## 1. Introducción 
 
-### 1.1. Contexto del Proyecto
+### 1.1. Sector pesquero
+El portal **Observatorio PRODUCEmpresarial** ofrece información mensual (setiembre 2025), anuarios estadísticos (2023), fichas técnicas e informes coyunturales para la industria pesquera.
+
+Recurso: https://www.producempresarial.pe/pesca-tablero/
+Ficha Tecnica de la ANCHOVETA: https://www.producempresarial.pe/desenvolvimiento-socioeconomico-del-recurso-anchoveta-chi/
+
+#### Consumo Mensual - Año 2022
+![Consumo 2022](output/consumo_mensual_2022.png)
+**Análisis:** El consumo en 2022 muestra picos claros en los meses definidos como "temporada de pesca" (Abril, Noviembre-Diciembre), validando la relevancia de esta variable.
+
+
 Este informe presenta una metodología avanzada para la predicción de demanda de la línea de negocio "HIDRÁULICA COMPONENTE" en el sector pesca. A diferencia de análisis previos, este proyecto incorpora **reglas de negocio específicas** y **variables externas** para mejorar significativamente la precisión y relevancia de los pronósticos, con el objetivo final de optimizar la gestión de inventario.
 
 ### 1.2. Objetivos Específicos
