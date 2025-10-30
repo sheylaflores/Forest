@@ -8,15 +8,78 @@
 ## 1. Introducción 
 
 ### 1.1. Sector pesquero
-El portal **Observatorio PRODUCEmpresarial** ofrece información mensual (setiembre 2025), anuarios estadísticos (2023), fichas técnicas e informes coyunturales para la industria pesquera.
+Ministerio de la Producción **PRODUCE**, en su portal **Observatorio PRODUCEmpresarial** ofrece información mensual (setiembre 2025), anuarios estadísticos (2023), fichas técnicas e informes coyunturales para la industria pesquera.
 
 Recurso: https://www.producempresarial.pe/pesca-tablero/
 
-Ficha Tecnica de la ANCHOVETA: https://www.producempresarial.pe/desenvolvimiento-socioeconomico-del-recurso-anchoveta-chi/
+Ficha Tecnica de la ANCHOVETA: 
 
-#### Índice de estacionalidad y pronóstico del desempeño pesquero
-(output/Estacionalidad Pesca Anchoveta.png)
-**Análisis:** El consumo en 2022 muestra picos claros en los meses definidos como "temporada de pesca" (Abril, Noviembre-Diciembre), validando la relevancia de esta variable.
+https://www.producempresarial.pe/desenvolvimiento-socioeconomico-del-recurso-anchoveta-chi/
+
+#### Estacionalidad Pesca Anchoveta
+![Estacionalidad Pesca Anchoveta](output/Estacionalidad_Pesca_Anchoveta.png)
+
+Se observa estacionalidad : 
+### Temporada de Pesca de Anchoveta (CHI)
+
+| Meses de mayor actividad |
+|---------------------------|
+| Abril                    |
+| Mayo                     |
+| Junio                    |
+| Noviembre                |
+| Diciembre                |
+
+ 
+ El Instituto del Mar del Perú  **IMARPE**  investigar los recursos marinos y las condiciones del ecosistema marino peruano para sustentar la toma de decisiones en la gestión pesquera, realizan informes sobre : 
+- La distribución, abundancia, reproducción y alimentación de especies marinas.
+- Las condiciones oceanográficas y climáticas que influyen en los recursos pesqueros.
+- La evaluación de los stocks (poblaciones disponibles) de especies como la anchoveta, pota, bonito, jurel y caballa.
+- Determinan de cuotas de captura y temporadas de pesca, en coordinación con PRODUCE.
+En base a ello, se establece si abrir o cerrar las temporadas de pesca.
+
+*Ultimos informes* 
+- Informe Correspondiente al Oficio N° 0048-2025-IMARPE/GC - 24 de julio de 2025
+
+Recurso: https://cdn.www.gob.pe/uploads/document/file/8404573/6985333-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-2025.pdf?v=1753371112
+
+- Informe Correspondiente al Oficio N° 0970-2025-IMARPE/PE- 22 de junio de 2025
+
+Recurso: https://cdn.www.gob.pe/uploads/document/file/8248202/6885672-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-en-la-region-sur.pdf?v=1750621948
+
+En todos sus reportes evaluan: 
+- Condición reproductiva:  Índice Gonadosomático (IGS) que es un indicador de la actividad reproductiva, y  la fracción desovante
+(FD)
+- Por cumplimiento de juveniles previstos -“Volumen de juveniles de anchoveta que se prevé capturar
+durante la primera temporada de pesca de 2025 en la región norte-centro” (Oficio Nº 719-2025-
+IMARPE/PE del 07 de mayo de 2025), incidencia de juveniles supera el 50% por día.
+- R.M 148-2025-PRODUCE, sobre el Límite Máximo Total de Captura Permisible de (LMTCP) de 3 000 000 toneladas para la primera temporada de pesca de anchoveta en la región Norte-Centro 2025, el desembarque de anchoveta durante la primera temporada en la región norte – centro, al 16 de julio, alcanzó un total de 2 430 261 toneladas (t) que corresponde al 81,0% del LMTCP establecido para la temporada.
+- condiciones oceanográficas
+- Segunda temporada de pesca 2025: Límite Máximo Total de Captura Permisible (LMTCP) es en 251 mil toneladas.
+### VEDAS ESTABLECIDAS:
+Recurso. https://pescayconsumoresponsable.produce.gob.pe/vedas.html 
+Tiempo en el cual está prohibido capturar alguna especie, se dan para evitar la depredación de los recursos marinos y permitir la reproducción de las especies.
+
+#### Escenarios a considerar: 
+- PRODUCE ha emitido comunicados sobre suspensión preventiva de las actividades extractivas... 
+| **Fecha del Comunicado** | **N° de Comunicado**            | **Motivo de la Suspensión**                                            | **Zona Afectada**                                                                                                                                 | **Duración** | **Periodo de Suspensión**                   | **Referencia / Fuente**                  |
+| ------------------------ | ------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------- | ---------------------------------------- |
+| **09/11/2024**           | N° 027-2024-PRODUCE/DGSFS-PA-SP | Alta incidencia de ejemplares juveniles según Reporte N° 02 del IMARPE | Zona Norte–Centro: entre 11°30’S – 12°00’S, de 20 a 30 millas náuticas                                                                            | 3 días       | 09/11/2024 (19:00 h) – 12/11/2024 (19:00 h) | Oficio N° 0048-2025-IMARPE/GC – PRODUCE  |
+| **22/11/2023**           | N° 105-2023-PRODUCE/DGSFS-PA-SP | Alta incidencia de ejemplares juveniles según Reporte N° 24 del IMARPE | Zona Norte–Centro: <br>• 07°30’S – 08°00’S (dentro de 10 mn) <br>• 08°30’S – 09°00’S (dentro de 10 mn) <br>• 12°20’S – 12°30’S (entre 10 y 20 mn) | 5 días       | 22/11/2023 (21:00 h) – 27/11/2023 (21:00 h) | Oficio N° 1421-2023-IMARPE/PCD – PRODUCE |
+
+Recursos: https://www.gob.pe/institucion/produce/informes-publicaciones/4879498-suspension-de-la-actividad-extractiva-del-recurso-anchoveta 
+
+https://www.gob.pe/institucion/produce/informes-publicaciones/6164651-suspension-de-la-actividad-extractiva-del-recurso-anchoveta
+
+- Fenomeno del Niño afecto la Primera temporada de pesca 2023.
+Afecta la biomasa de la anchoveta : El Niño costero y El Niño global por lo que Produce no autorizo la temporada de pesca 
+
+
+### EMPRESAS: INDUSTRIA PESCA  - INFORME PRODUCE
+Recurso: https://www.producempresarial.pe/wp-content/uploads/2024/02/a_pesca.pdf
+
+Según el Ministerio de la Producción, la veda es un espacio de tiempo en el que está prohibido capturar alguna especie por determinadas razones; como, por ejemplo, la actividad reproductiva, que asegura el desarrollo de los recursos y los ecosistemas marinos
+
 
 
 Este informe presenta una metodología avanzada para la predicción de demanda de la línea de negocio "HIDRÁULICA COMPONENTE" en el sector pesca. A diferencia de análisis previos, este proyecto incorpora **reglas de negocio específicas** y **variables externas** para mejorar significativamente la precisión y relevancia de los pronósticos, con el objetivo final de optimizar la gestión de inventario.
