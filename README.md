@@ -99,6 +99,9 @@ Razón: Durante El Niño, las aguas superficiales del océano se calientan, la a
 
 **Estudio Nacional del Fenómeno El Niño (ENFEN)** sobre el Niño Costero ni de la Niña Costera. Según el Comunicado Oficial N.° 10-2025, la región Niño 1+2, que comprende la costa norte y centro del país, se mantiene en condición “no activa”, y se espera que la temperatura superficial del mar permanezca dentro de valores normales hasta abril de 2026.
 
+Fuente: 
+
+![EFEN sobre el niño](NIÑO_2025_2026.png)
 
 
 ### METODOLOGIA
