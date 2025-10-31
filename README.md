@@ -30,7 +30,20 @@ Se observa estacionalidad :
 | Noviembre                |
 | Diciembre                |
 
- 
+
+
+Se observa las embarcaciones por Zonas:  
+
+| **Zona Norte-Centro** | **Zona Sur** |
+|------------------------|---------------|
+| Chimbote              | Matarani      |
+| Callao                | Pacocha       |
+| Tambo de Mora         | Mollendo      |
+| Coishco               | Ilo           |
+| Paracas               |               |
+
+
+
  El Instituto del Mar del Perú  **IMARPE**  investigar los recursos marinos y las condiciones del ecosistema marino peruano para sustentar la toma de decisiones en la gestión pesquera, realizan informes sobre : 
 - La distribución, abundancia, reproducción y alimentación de especies marinas.
 - Las condiciones oceanográficas y climáticas que influyen en los recursos pesqueros.
@@ -41,11 +54,16 @@ En base a ello, se establece si abrir o cerrar las temporadas de pesca.
 *Ultimos informes* 
 - Informe Correspondiente al Oficio N° 0048-2025-IMARPE/GC - 24 de julio de 2025
 
-Recurso: https://cdn.www.gob.pe/uploads/document/file/8404573/6985333-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-2025.pdf?v=1753371112
+"INFORME DE AVANCE DE LA PRIMERA TEMPORADA PESCA DE ANCHOVETA (Engraulis ringens) 2025 EN LA REGIÓN NORTE-CENTRO DEL MAR PERUANO
+22 DE ABRIL AL 20 DE JULIO DE 2025 "
+  
+Link: https://cdn.www.gob.pe/uploads/document/file/8404573/6985333-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-2025.pdf?v=1753371112
 
 - Informe Correspondiente al Oficio N° 0970-2025-IMARPE/PE- 22 de junio de 2025
 
-Recurso: https://cdn.www.gob.pe/uploads/document/file/8248202/6885672-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-en-la-region-sur.pdf?v=1750621948
+INFORME DE AVANCE DE LA PRIMERA TEMPORADA DE PESCA 2025 DE ANCHOVETA (Engraulis ringens) EN LA REGIÓN SUR DEL MAR PERUANO (01 ENERO – 10 DE JUNIO 2025) Y PERSPECTIVAS DE EXPLOTACION PARA LA SEGUNDA TEMPORADA DEL AÑO (JULIO – DICIEMBRE 2025)
+
+Link: https://cdn.www.gob.pe/uploads/document/file/8248202/6885672-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-en-la-region-sur.pdf?v=1750621948
 
 En todos sus reportes evaluan: 
 - Condición reproductiva:  Índice Gonadosomático (IGS) que es un indicador de la actividad reproductiva, y  la fracción desovante
@@ -56,31 +74,34 @@ IMARPE/PE del 07 de mayo de 2025), incidencia de juveniles supera el 50% por dí
 - R.M 148-2025-PRODUCE, sobre el Límite Máximo Total de Captura Permisible de (LMTCP) de 3 000 000 toneladas para la primera temporada de pesca de anchoveta en la región Norte-Centro 2025, el desembarque de anchoveta durante la primera temporada en la región norte – centro, al 16 de julio, alcanzó un total de 2 430 261 toneladas (t) que corresponde al 81,0% del LMTCP establecido para la temporada.
 - condiciones oceanográficas
 - Segunda temporada de pesca 2025: Límite Máximo Total de Captura Permisible (LMTCP) es en 251 mil toneladas.
+  
 ### VEDAS ESTABLECIDAS:
-Recurso. https://pescayconsumoresponsable.produce.gob.pe/vedas.html 
+Link: https://pescayconsumoresponsable.produce.gob.pe/vedas.html 
+
 Tiempo en el cual está prohibido capturar alguna especie, se dan para evitar la depredación de los recursos marinos y permitir la reproducción de las especies.
 
 #### Escenarios a considerar: 
-- PRODUCE ha emitido comunicados sobre suspensión preventiva de las actividades extractivas... 
+- PRODUCE ha emitido comunicados sobre suspensión preventiva de las actividades extractivas...
+  
 | **Fecha del Comunicado** | **N° de Comunicado**            | **Motivo de la Suspensión**                                            | **Zona Afectada**                                                                                                                                 | **Duración** | **Periodo de Suspensión**                   | **Referencia / Fuente**                  |
 | ------------------------ | ------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------- | ---------------------------------------- |
 | **09/11/2024**           | N° 027-2024-PRODUCE/DGSFS-PA-SP | Alta incidencia de ejemplares juveniles según Reporte N° 02 del IMARPE | Zona Norte–Centro: entre 11°30’S – 12°00’S, de 20 a 30 millas náuticas                                                                            | 3 días       | 09/11/2024 (19:00 h) – 12/11/2024 (19:00 h) | Oficio N° 0048-2025-IMARPE/GC – PRODUCE  |
 | **22/11/2023**           | N° 105-2023-PRODUCE/DGSFS-PA-SP | Alta incidencia de ejemplares juveniles según Reporte N° 24 del IMARPE | Zona Norte–Centro: <br>• 07°30’S – 08°00’S (dentro de 10 mn) <br>• 08°30’S – 09°00’S (dentro de 10 mn) <br>• 12°20’S – 12°30’S (entre 10 y 20 mn) | 5 días       | 22/11/2023 (21:00 h) – 27/11/2023 (21:00 h) | Oficio N° 1421-2023-IMARPE/PCD – PRODUCE |
 
-Recursos: https://www.gob.pe/institucion/produce/informes-publicaciones/4879498-suspension-de-la-actividad-extractiva-del-recurso-anchoveta 
+Fuente: https://www.gob.pe/institucion/produce/informes-publicaciones/4879498-suspension-de-la-actividad-extractiva-del-recurso-anchoveta 
 
 https://www.gob.pe/institucion/produce/informes-publicaciones/6164651-suspension-de-la-actividad-extractiva-del-recurso-anchoveta
 
-- Fenomeno del Niño afecto la Primera temporada de pesca 2023.
-Afecta la biomasa de la anchoveta : El Niño costero y El Niño global por lo que Produce no autorizo la temporada de pesca 
+- **FENOMENO DEL NIÑO 2023**
+El Niño costero y El Niño global afecta la biomasa de la anchoveta  por lo que Produce no autorizo la 1er temporada de pesca 2023.
+
+Razón: Durante El Niño, las aguas superficiales del océano se calientan, la anchoveta vive en aguas frías (entre 14 °C y 19 °C).
+
+**Estudio Nacional del Fenómeno El Niño (ENFEN)** sobre el Niño Costero ni de la Niña Costera. Según el Comunicado Oficial N.° 10-2025, la región Niño 1+2, que comprende la costa norte y centro del país, se mantiene en condición “no activa”, y se espera que la temperatura superficial del mar permanezca dentro de valores normales hasta abril de 2026.
 
 
-### EMPRESAS: INDUSTRIA PESCA  - INFORME PRODUCE
-Recurso: https://www.producempresarial.pe/wp-content/uploads/2024/02/a_pesca.pdf
 
-Según el Ministerio de la Producción, la veda es un espacio de tiempo en el que está prohibido capturar alguna especie por determinadas razones; como, por ejemplo, la actividad reproductiva, que asegura el desarrollo de los recursos y los ecosistemas marinos
-
-
+### METODOLOGIA
 
 Este informe presenta una metodología avanzada para la predicción de demanda de la línea de negocio "HIDRÁULICA COMPONENTE" en el sector pesca. A diferencia de análisis previos, este proyecto incorpora **reglas de negocio específicas** y **variables externas** para mejorar significativamente la precisión y relevancia de los pronósticos, con el objetivo final de optimizar la gestión de inventario.
 
@@ -108,7 +129,7 @@ El proyecto se ejecutó en tres fases principales, orquestadas por scripts de Py
 1.  **Creación de Variable Exógena:** Se definió una variable binaria `temporada_pesca`:
     - `1` = Temporada alta (Abril, Mayo, Junio, Noviembre, Diciembre).
     - `0` = Temporada baja/veda (resto de meses).
-2.  **Competencia de Modelos por Producto:** Para cada uno de los 170 productos clave, se realizó una competencia entre cinco modelos, integrando la variable exógena:
+2.  **Modelos analizados:** Para cada uno de los 170 productos clave, se realizó una competencia entre cinco modelos, integrando la variable exógena:
     - **ARIMA/SARIMA:** Usando el parámetro `exog`.
     - **XGBoost/RandomForest:** Incluyendo `temporada_pesca` como una característica.
     - **Prophet:** Utilizando `add_regressor('temporada_pesca')`.
