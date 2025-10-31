@@ -101,7 +101,7 @@ Razón: Durante El Niño, las aguas superficiales del océano se calientan, la a
 
 Fuente: 
 
-![EFEN sobre el niño](NIÑO_2025_2026.png)
+![EFEN sobre el niño](output/NIÑO_2025_2026.png)
 
 
 ### METODOLOGIA
