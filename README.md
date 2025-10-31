@@ -103,6 +103,14 @@ Fuente:
 
 ![EFEN sobre el niño](output/NIÑO_2025_2026.png)
 
+### 1.2 Clientes y competencia 
+
+Competencia Naval: 
+
+Jorle Industrial SAC
+Import360
+
+
 
 ### METODOLOGIA
 
