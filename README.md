@@ -155,14 +155,20 @@ Se generaron gráficos individuales para los 5 productos más importantes, compa
 ## 3. Resultados del Análisis Exploratorio (EDA)
 
 ### 3.1. Resumen Estadístico del Consumo
-- CANTIDAD INCIAL ANTES DE DEPURACIÓN: 1050
-- CANTIDAD FINAL DESPUES DE DEPURACIÓN: 931
-- CANTIDAD FINAL DESPUES DE FILTRADO 2022 -20225: 598
-Tras filtrar las marcas genéricas, el consumo mensual total para el período 2022-2025 presenta las siguientes características:
-- **Media (mean):** 114.76 unidades/mes.
-- **Desviación Estándar (std):** 55.83, indicando una volatilidad considerable.
-- **Mínimo y Máximo:** El consumo mensual ha variado entre 33 y 258 unidades.
-- **Cuartiles:** El 50% de los meses, el consumo se encuentra entre 72 y 144 unidades.
+
+### 📊 Resumen General del Consumo (2022–2025)
+
+| Indicador | Descripción / Valor |
+|------------|--------------------|
+| **Cantidad inicial antes de depuración** | 1050 registros |
+| **Cantidad final después de depuración** | 931 registros |
+| **Cantidad final después del filtrado (2022–2025)** | 598 registros |
+| **Media (mean)** | 114.76 unidades/mes |
+| **Desviación estándar (std)** | 55.83 unidades |
+| **Mínimo (min)** | 33 unidades |
+| **Máximo (max)** | 258 unidades |
+| **Cuartiles (Q1–Q3)** | El 50% de los meses tiene un consumo entre 72 y 144 unidades |
+
 
 **Tendencia del consumo mensual 2022-2025**
   ![Consumo mensual 2022-2025](output/consumo_mensual.png)
