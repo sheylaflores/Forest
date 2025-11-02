@@ -164,6 +164,9 @@ Tras filtrar las marcas genéricas, el consumo mensual total para el período 20
 - **Mínimo y Máximo:** El consumo mensual ha variado entre 33 y 258 unidades.
 - **Cuartiles:** El 50% de los meses, el consumo se encuentra entre 72 y 144 unidades.
 
+**Tendencia del consumo mensual 2022-2025**
+  ![Consumo mensual 2022-2025](output/consumo_mensual.png)
+
 ### 3.2. Análisis del Consumo Anual (Marcas Relevantes)
 
 #### Consumo Mensual - Año 2022
