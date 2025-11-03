@@ -209,7 +209,13 @@ Se tienen **584 productos** despúes del filtrado, se distribuyen en las siguien
 
 ### 3.3. PRODUCTOS ESTACIONALES
 
+Se identficaron los siguientes productos que se venden en temporadas de pesca:
+**sap: A18130006711**
+  ![consumo_A18130006711](output/consumo_A18130006711.png)
 
+**SAP:A18110002547**
+
+  ![consumo_A18110002547](output/consumo_A18110002547.png)
 
 ---
 
