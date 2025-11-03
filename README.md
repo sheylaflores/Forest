@@ -207,6 +207,10 @@ Se tienen **584 productos** despúes del filtrado, se distribuyen en las siguien
 ![Consumo 2024](output/consumo_mensual_2024.png)
 **Análisis:** El patrón de 2024 vuelve a alinearse parcialmente con las temporadas de pesca, reforzando que, aunque no es una regla perfecta, la estacionalidad es un factor importante.
 
+### 3.3. PRODUCTOS ESTACIONALES
+
+
+
 ---
 
 ## 4. Resultados de la Predicción de Demanda
