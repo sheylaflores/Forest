@@ -152,21 +152,31 @@ Se generaron gráficos individuales para los 5 productos más importantes, compa
 
 ---
 
-## 3. Resultados del Análisis Exploratorio (EDA)
+## 3. Resultados del Análisis Exploratorio (EDA) 2022-2025
 
-### 3.1. Resumen Estadístico del Consumo
-
-### Resumen General del Consumo (2022–2025)
+### 3.1. Resumen Estadístico del Consumo (2022-2025)
 
 | Indicador | Valor |
 |------------|--------------------|
 | **Cantidad de productos** | 931 |
-| **Cantidad final después del filtrado (2022–2025)** | 598 registros |
+| **Cantidad final después del filtrado (2022–2025)** | 598 |
 | **Media (mean)** | 114.76 unidades/mes |
-| **Desviación estándar (std)** | 55.83 unidades |
-| **Mínimo (min)** | 33 unidades |
-| **Máximo (max)** | 258 unidades |
-| **Cuartiles (Q1–Q3)** | El 50% de los meses tiene un consumo entre 72 y 144 unidades |
+| **Desviación estándar (std)** | 55.83 |
+| **Mínimo** | 33  |
+| **Máximo** | 258 |
+| **25%** | 71.93 |
+| **50%** | 97.00 |
+| **75%** | 144.00 |
+
+### 3.2. Participación por Marcas TOP 5
+
+| Marca        | % del Total |
+|---------------|-------------|
+| BRENNAN       | 17.03%      |
+| VICKERS       | 12.58%      |
+| SAI           | 9.81%       |
+| PARKER        | 9.51%       |
+| HYDROCONTROL  | 9.23%       |
 
 
 **Tendencia del consumo mensual 2022-2025**
