@@ -158,9 +158,9 @@ Se generaron gráficos individuales para los 5 productos más importantes, compa
 
 ### 📊 Resumen General del Consumo (2022–2025)
 
-| Indicador | Descripción / Valor |
+| Indicador | Valor |
 |------------|--------------------|
-| **Cantidad inicial antes de depuración** | 1050 registros |
+| **Cantidad inicial** | 1050 registros |
 | **Cantidad final después de depuración** | 931 registros |
 | **Cantidad final después del filtrado (2022–2025)** | 598 registros |
 | **Media (mean)** | 114.76 unidades/mes |
