@@ -154,29 +154,40 @@ Se generaron gráficos individuales para los 5 productos más importantes, compa
 
 ## 3. Resultados del Análisis Exploratorio (EDA) 2022-2025
 
-### 3.1. Resumen Estadístico del Consumo (2022-2025)
+### 3.1. Resumen  
 
-| Indicador | Valor |
+| Indicador | Productos |
 |------------|--------------------|
-| **Cantidad de productos** | 931 |
-| **Cantidad final después del filtrado (2022–2025)** | 598 |
-| **Media (mean)** | 114.76 unidades/mes |
-| **Desviación estándar (std)** | 55.83 |
-| **Mínimo** | 33  |
-| **Máximo** | 258 |
-| **25%** | 71.93 |
-| **50%** | 97.00 |
-| **75%** | 144.00 |
+| **Cantidad inicial** | 1050 |
+| **Marca: GENÉRICO** | 107 |
+| **Marca: MATERIALES VARIOS** | 12 |
+| **Marca:  FERRETERIA** | 44 |
+| **Cantidad de productos** | 887 |
 
-### 3.2. Participación por Marcas TOP 5
 
-| Marca        | % del Total |
+### 3.2. MUESTRA DESDE 2022-2025
+
+Se tienen **584 productos** despúes del filtrado, se distribuyen en las siguientes marcas: 
+
+| Marca TOP 5   | % del Total |
 |---------------|-------------|
-| BRENNAN       | 17.03%      |
-| VICKERS       | 12.58%      |
-| SAI           | 9.81%       |
-| PARKER        | 9.51%       |
-| HYDROCONTROL  | 9.23%       |
+| BRENNAN       | 17.46%      |
+| VICKERS       | 12.89%      |
+| SAI           | 10.06%       |
+| PARKER        | 9.75%       |
+| HYDROCONTROL  | 9.46%       |
+
+**Resumen Estadístico del Consumo Mensual**
+
+| Estadístico | Consumo |
+|--------------|--------|
+| **mean** | 112.09 | 
+| **std** | 54.12 |
+| **min** | 33 | 
+| **25%** | 71.69 | 
+| **50%** | 97.00 |
+| **75%** | 144.50 | 
+| **max** | 257 | 
 
 
 **Tendencia del consumo mensual 2022-2025**
