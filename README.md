@@ -1,4 +1,4 @@
-# Informe Final: Análisis y Predicción de Demanda con Variables Exógenas
+# Informe: Análisis del sector Pesquero
 
 **Fecha:** 28 de Octubre de 2025
 
@@ -51,7 +51,8 @@ Se observa las embarcaciones por Zonas:
 - Determinan de cuotas de captura y temporadas de pesca, en coordinación con PRODUCE.
 En base a ello, se establece si abrir o cerrar las temporadas de pesca.
 
-*Ultimos informes* 
+*TODA PUBLICACIÓN OFICIAL SE REALIZA EN EL DIARIO EL PERUANO* 
+
 - Informe Correspondiente al Oficio N° 0048-2025-IMARPE/GC - 24 de julio de 2025
 
 "INFORME DE AVANCE DE LA PRIMERA TEMPORADA PESCA DE ANCHOVETA (Engraulis ringens) 2025 EN LA REGIÓN NORTE-CENTRO DEL MAR PERUANO
@@ -217,6 +218,18 @@ Se identficaron los siguientes productos que se venden en temporadas de pesca:
 
   ![consumo_A18110002547](output/consumo_A18110002547.png)
 
+**SAP:A18110009021**
+
+  ![consumo_A18110002547](output/consumo_A18110009021.png)
+
+  **SAP:A18110009037**
+
+  ![consumo_A18110002547](output/consumo_A18110009037.png)
+
+  **SAP:A18110010330**
+
+  ![consumo_A18110002547](output/consumo_A18110010330.png)
+  
 ---
 
 ## 4. Resultados de la Predicción de Demanda
