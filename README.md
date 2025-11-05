@@ -212,6 +212,21 @@ Se tienen **584 productos** despúes del filtrado, se distribuyen en las siguien
 
 Se identficaron los siguientes productos que se venden Antes de la temporada de pesca:
 
+| SAP          | Código GET      | Descripción                   | Marca        |
+| ------------ | --------------- | ----------------------------- | ------------ |
+| A18110009037 | HC-D12 SEAL KIT | SEAL KIT D12 CODE JSP10700097 | HYDROCONTROL |
+| A18110009021 | HC-D25 SEAL KIT | SEAL KIT D25 CODE JSP10900082 | HYDROCONTROL |
+| A18110008772 | 12MA-12UFS      | ADAPTER 1501-12-12            | BRENNAN      |
+| A18110002547 | DG4S4 018C UH60 | ELECTROVALVULA 02-126361      | VICKERS      |
+| A18110008863 | 61239-000       | SEAL KIT 6000 BEARINGLESS     | CHAR-LYNN    |
+| A18110010465 | 0153110094***** | SHAFT KEYED 55MM FOR GM3A     | SAI          |
+| A18130005688 | 114-1035-006    | MOTOR CHARLYN 29.9 CU.IN./REV | EATON        |
+| A18130007393 | 923106          | SEAL KIT 46M                  | VICKERS      |
+| A18130006711 | 394974          | SHAFT SEAL 45VQ/46M           | VICKERS      |
+| A18130007380 | 920072          | SEAL KIT 4535VQ               | EATON        |
+
+
+
 **SAP:A18110009037**
 
   ![consumo_A18110002547](output/consumo_A18110009037.png)
