@@ -60,11 +60,11 @@ En base a ello, se establece si abrir o cerrar las temporadas de pesca.
   
 Link: https://cdn.www.gob.pe/uploads/document/file/8404573/6985333-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-2025.pdf?v=1753371112
 
-- Informe Correspondiente al Oficio N° 0970-2025-IMARPE/PE- 22 de junio de 2025
+- RESOLUCIÓN MINISTERIAL Nº 00368-2025-PRODUCE- 1 de noviembre de 2025
 
-INFORME DE AVANCE DE LA PRIMERA TEMPORADA DE PESCA 2025 DE ANCHOVETA (Engraulis ringens) EN LA REGIÓN SUR DEL MAR PERUANO (01 ENERO – 10 DE JUNIO 2025) Y PERSPECTIVAS DE EXPLOTACION PARA LA SEGUNDA TEMPORADA DEL AÑO (JULIO – DICIEMBRE 2025)
+Link: https://busquedas.elperuano.pe/dispositivo/NL/2454458-1
 
-Link: https://cdn.www.gob.pe/uploads/document/file/8248202/6885672-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-en-la-region-sur.pdf?v=1750621948
+- "El Límite Máximo Total de Captura Permisible provisional de la Zona Norte – Centro (LMTCP Norte – Centro) del recurso anchoveta (Engraulis ringens) y anchoveta blanca (Anchoa nasus) para consumo humano indirecto, correspondiente a la Segunda Temporada de Pesca 2025 de la Zona Norte – Centro autorizada en el artículo 1 de la presente Resolución Ministerial, es de 500,000 (quinientas mil) toneladas" (Articulo 2)
 
 En todos sus reportes evaluan: 
 - Condición reproductiva:  Índice Gonadosomático (IGS) que es un indicador de la actividad reproductiva, y  la fracción desovante
@@ -74,7 +74,7 @@ durante la primera temporada de pesca de 2025 en la región norte-centro” (Ofi
 IMARPE/PE del 07 de mayo de 2025), incidencia de juveniles supera el 50% por día.
 - R.M 148-2025-PRODUCE, sobre el Límite Máximo Total de Captura Permisible de (LMTCP) de 3 000 000 toneladas para la primera temporada de pesca de anchoveta en la región Norte-Centro 2025, el desembarque de anchoveta durante la primera temporada en la región norte – centro, al 16 de julio, alcanzó un total de 2 430 261 toneladas (t) que corresponde al 81,0% del LMTCP establecido para la temporada.
 - condiciones oceanográficas
-- Segunda temporada de pesca 2025: Límite Máximo Total de Captura Permisible (LMTCP) es en 251 mil toneladas.
+
   
 ### VEDAS ESTABLECIDAS:
 Link: https://pescayconsumoresponsable.produce.gob.pe/vedas.html 
