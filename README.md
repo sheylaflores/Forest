@@ -194,7 +194,7 @@ Se tienen **584 productos** despúes del filtrado, se distribuyen en las siguien
 **Tendencia del consumo mensual 2022-2025**
   ![Consumo mensual 2022-2025](output/consumo_mensual.png)
 
-### 3.2. Análisis del Consumo Anual (Marcas Relevantes)
+### 3.2. Análisis del Consumo Anual 
 
 #### Consumo Mensual - Año 2022
 ![Consumo 2022](output/consumo_mensual_2022.png)
@@ -210,25 +210,31 @@ Se tienen **584 productos** despúes del filtrado, se distribuyen en las siguien
 
 ### 3.3. PRODUCTOS ESTACIONALES
 
-Se identficaron los siguientes productos que se venden en temporadas de pesca:
-**sap: A18130006711**
-  ![consumo_A18130006711](output/consumo_A18130006711.png)
+Se identficaron los siguientes productos que se venden Antes de la temporada de pesca:
 
-**SAP:A18110002547**
+**SAP:A18110009037**
 
-  ![consumo_A18110002547](output/consumo_A18110002547.png)
+  ![consumo_A18110002547](output/consumo_A18110009037.png)
 
 **SAP:A18110009021**
 
   ![consumo_A18110002547](output/consumo_A18110009021.png)
 
-  **SAP:A18110009037**
+ **SAP:A18110008772**
 
-  ![consumo_A18110002547](output/consumo_A18110009037.png)
+  ![consumo_A18110002547](output/consumo_A18110008772.png)
 
-  **SAP:A18110010330**
+**SAP:A18110002547**
 
-  ![consumo_A18110002547](output/consumo_A18110010330.png)
+  ![consumo_A18110002547](output/consumo_A18110002547.png)
+
+   
+**sap: A18130006711**
+  ![consumo_A18130006711](output/consumo_A18130006711.png)
+
+
+
+
   
 ---
 
