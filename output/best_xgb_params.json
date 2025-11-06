@@ -1,0 +1,107 @@
+{
+    "A18110000362": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "A18110001067": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 500
+    },
+    "A18110002547": {
+        "learning_rate": 0.01,
+        "max_depth": 5,
+        "n_estimators": 500
+    },
+    "A18110008772": {
+        "learning_rate": 0.01,
+        "max_depth": 5,
+        "n_estimators": 100
+    },
+    "A18110008863": {
+        "learning_rate": 0.1,
+        "max_depth": 7,
+        "n_estimators": 500
+    },
+    "A18110009021": {
+        "learning_rate": 0.01,
+        "max_depth": 7,
+        "n_estimators": 100
+    },
+    "A18110009031": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "A18110009037": {
+        "learning_rate": 0.01,
+        "max_depth": 7,
+        "n_estimators": 1000
+    },
+    "A18110010465": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 500
+    },
+    "A18130005688": {
+        "learning_rate": 0.01,
+        "max_depth": 5,
+        "n_estimators": 500
+    },
+    "A18130006673": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 500
+    },
+    "A18130006711": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 500
+    },
+    "A18130006764": {
+        "learning_rate": 0.1,
+        "max_depth": 7,
+        "n_estimators": 100
+    },
+    "A18130007380": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 1000
+    },
+    "A18130007393": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "A18130007396": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "A18130007399": {
+        "learning_rate": 0.01,
+        "max_depth": 5,
+        "n_estimators": 1000
+    },
+    "A18130007768": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "A18130007812": {
+        "learning_rate": 0.01,
+        "max_depth": 5,
+        "n_estimators": 100
+    },
+    "A18130007814": {
+        "learning_rate": 0.01,
+        "max_depth": 3,
+        "n_estimators": 100
+    },
+    "A22020000062": {
+        "learning_rate": 0.1,
+        "max_depth": 3,
+        "n_estimators": 500
+    }
+}
