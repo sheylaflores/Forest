@@ -230,6 +230,7 @@ Se identficaron los siguientes productos que se venden Antes de la temporada de 
 | A18130006711 | 394974          | SHAFT SEAL 45VQ/46M           | VICKERS      |
 | A18130007380 | 920072          | SEAL KIT 4535VQ               | EATON        |
 
+IMPORTANTE: https://share.google/images/hbEgbGghKrInvnay7
 
 
 **SAP:A18110009037**
