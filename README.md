@@ -8,7 +8,7 @@
 ## 1. Introducción 
 
 ### 1.1. Sector pesquero
-Ministerio de la Producción **PRODUCE**, en su portal **Observatorio PRODUCEmpresarial** ofrece información mensual (setiembre 2025), anuarios estadísticos (2023), fichas técnicas e informes coyunturales para la industria pesquera.
+Ministerio de la Producción **PRODUCE**, en su portal **Observatorio PRODUCEmpresarial** ofrece información mensual, anuarios estadísticos, fichas técnicas e informes coyunturales para la industria pesquera.
 
 Recurso: https://www.producempresarial.pe/pesca-tablero/
 
@@ -30,9 +30,7 @@ Se observa estacionalidad :
 | Noviembre                |
 | Diciembre                |
 
-
-
-Se observa las embarcaciones por Zonas:  
+**Las embarcaciones por Zonas:**
 
 | **Zona Norte-Centro** | **Zona Sur** |
 |------------------------|---------------|
@@ -42,16 +40,18 @@ Se observa las embarcaciones por Zonas:
 | Coishco               | Ilo           |
 | Paracas               |               |
 
+Otro organismo importante es el **IMARPE**: 
 
-
- El Instituto del Mar del Perú  **IMARPE**  investigar los recursos marinos y las condiciones del ecosistema marino peruano para sustentar la toma de decisiones en la gestión pesquera, realizan informes sobre : 
+Es el Instituto del Mar del Perú que investiga los recursos marinos y las condiciones del ecosistema marino peruano para sustentar la **toma de decisiones en la gestión pesquera**, en sus informes se evalua: 
 - La distribución, abundancia, reproducción y alimentación de especies marinas.
 - Las condiciones oceanográficas y climáticas que influyen en los recursos pesqueros.
 - La evaluación de los stocks (poblaciones disponibles) de especies como la anchoveta, pota, bonito, jurel y caballa.
-- Determinan de cuotas de captura y temporadas de pesca, en coordinación con PRODUCE.
+- Determinan las cuotas de captura y temporadas de pesca por cada zona, en coordinación con **PRODUCE**.
+
 En base a ello, se establece si abrir o cerrar las temporadas de pesca.
 
-*TODA PUBLICACIÓN OFICIAL SE REALIZA EN EL DIARIO EL PERUANO* 
+Publicaciones de informes en la página del Estado: https://www.gob.pe/institucion/imarpe/informes-publicaciones 
+
 
 - Informe Correspondiente al Oficio N° 0048-2025-IMARPE/GC - 24 de julio de 2025
 
@@ -59,12 +59,6 @@ En base a ello, se establece si abrir o cerrar las temporadas de pesca.
 22 DE ABRIL AL 20 DE JULIO DE 2025 "
   
 Link: https://cdn.www.gob.pe/uploads/document/file/8404573/6985333-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-2025.pdf?v=1753371112
-
-- RESOLUCIÓN MINISTERIAL Nº 00368-2025-PRODUCE- 1 de noviembre de 2025
-
-Link: https://busquedas.elperuano.pe/dispositivo/NL/2454458-1
-
-- "El Límite Máximo Total de Captura Permisible provisional de la Zona Norte – Centro (LMTCP Norte – Centro) del recurso anchoveta (Engraulis ringens) y anchoveta blanca (Anchoa nasus) para consumo humano indirecto, correspondiente a la Segunda Temporada de Pesca 2025 de la Zona Norte – Centro autorizada en el artículo 1 de la presente Resolución Ministerial, es de 500,000 (quinientas mil) toneladas" (Articulo 2)
 
 En todos sus reportes evaluan: 
 - Condición reproductiva:  Índice Gonadosomático (IGS) que es un indicador de la actividad reproductiva, y  la fracción desovante
@@ -74,8 +68,19 @@ durante la primera temporada de pesca de 2025 en la región norte-centro” (Ofi
 IMARPE/PE del 07 de mayo de 2025), incidencia de juveniles supera el 50% por día.
 - R.M 148-2025-PRODUCE, sobre el Límite Máximo Total de Captura Permisible de (LMTCP) de 3 000 000 toneladas para la primera temporada de pesca de anchoveta en la región Norte-Centro 2025, el desembarque de anchoveta durante la primera temporada en la región norte – centro, al 16 de julio, alcanzó un total de 2 430 261 toneladas (t) que corresponde al 81,0% del LMTCP establecido para la temporada.
 - condiciones oceanográficas
+- Brinda recomendaciones finales
 
   
+
+**TODA PUBLICACIÓN OFICIAL SE REALIZA EN EL DIARIO EL PERUANO**
+
+- RESOLUCIÓN MINISTERIAL Nº 00368-2025-PRODUCE- 1 de noviembre de 2025
+
+Link: https://busquedas.elperuano.pe/dispositivo/NL/2454458-1
+
+- "El Límite Máximo Total de Captura Permisible provisional de la **Zona Norte – Centro** (LMTCP Norte – Centro) del recurso anchoveta (Engraulis ringens) y anchoveta blanca (Anchoa nasus) para consumo humano indirecto, correspondiente a la Segunda Temporada de Pesca 2025 de la Zona Norte – Centro autorizada en el artículo 1 de la presente Resolución Ministerial, es de **500,000 (quinientas mil) toneladas**" (Articulo 2)
+
+
 ### VEDAS ESTABLECIDAS:
 Link: https://pescayconsumoresponsable.produce.gob.pe/vedas.html 
 
@@ -131,7 +136,7 @@ El proyecto se ejecutó en tres fases principales, orquestadas por scripts de Py
 
 ### 2.1. Fase 1: Limpieza de Datos y Análisis Exploratorio (EDA)
 
-1.  **Filtrado por Marca:** Se utilizó el archivo `14.06 MP_ARTICULOS_SAP.xlsx` para identificar todos los productos cuya marca es **"MATERIALES VARIOS"** o **"GENÉRICO"**. Se generó una lista con **878 productos excluidos** (`output/productos_excluidos.txt`).
+1.  **Filtrado por Marca:** Se utilizó el archivo `14.06 MP_ARTICULOS_SAP.xlsx` para identificar todos los productos cuya marca es **"MATERIALES VARIOS"** o **"GENÉRICO"**. Se generó una lista con ...(`output/productos_excluidos.txt`).
 2.  **Depuración de Datos de Consumo:** Se eliminaron todas las transacciones asociadas a los productos excluidos del archivo `kardexASTEC_filtrado.xlsx`.
 3.  **Análisis Descriptivo (2022-2025):** Sobre los datos limpios, se calculó un resumen estadístico del consumo mensual total.
 4.  **Identificación de Productos Clave:** Se aplicó un **análisis de Pareto (80/20)**, resultando en una lista de **170 productos clave** que representan el 80% del consumo y que fue guardada en `output/productos_clave.txt`.
@@ -153,7 +158,7 @@ Se generaron gráficos individuales para los 5 productos más importantes, compa
 
 ---
 
-## 3. Resultados del Análisis Exploratorio (EDA) 2022-2025
+## 3. Resultados del Análisis Exploratorio (EDA) 
 
 ### 3.1. Resumen  
 
