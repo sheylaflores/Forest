@@ -244,11 +244,7 @@ Se identficaron los siguientes productos que se venden Antes de la temporada de 
 
   ![consumo_A18110002547](output/consumo_A18110008772.png)
 
-**SAP:A18110002547**
 
-  ![consumo_A18110002547](output/consumo_A18110002547.png)
-
-   
 **sap: A18130006711** Antes y Durante la temporada de pesca
   ![consumo_A18130006711](output/consumo_A18130006711.png)
 
