@@ -234,7 +234,8 @@ IMPORTANTE: https://share.google/images/hbEgbGghKrInvnay7
 
 
 **SAP:A18110009037**
-
+  ![consumo_A18110002547](output/consumo_lineal.png)
+  
   ![consumo_A18110002547](output/consumo_A18110009037.png)
 
 **SAP:A18110009021**
