@@ -239,18 +239,25 @@ IMPORTANTE: https://share.google/images/hbEgbGghKrInvnay7
   ![consumo_A18110002547](output/consumo_A18110009037.png)
 
 **SAP:A18110009021**
-
+  ![consumo_A18110002547](output/consumo_lineal2.png)
+  
   ![consumo_A18110002547](output/consumo_A18110009021.png)
 
  **SAP:A18110008772**
-
+  ![consumo_A18110002547](output/consumo_lineal3.png)
+  
   ![consumo_A18110002547](output/consumo_A18110008772.png)
 
 
 **sap: A18130006711** Antes y Durante la temporada de pesca
+  ![consumo_A18110002547](output/consumo_lineal4.png)
+  
   ![consumo_A18130006711](output/consumo_A18130006711.png)
 
 **sap: A18110002547** Antes y Durante la temporada de pesca
+  ![consumo_A18110002547](output/consumo_lineal5.png)
+
+
   ![consumo_A18130006711](output/consumo_A18110002547.png)
 
   
