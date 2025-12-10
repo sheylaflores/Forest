@@ -53,12 +53,6 @@ En base a ello, se establece si abrir o cerrar las temporadas de pesca.
 Publicaciones de informes en la página del Estado: https://www.gob.pe/institucion/imarpe/informes-publicaciones 
 
 
-- Informe Correspondiente al Oficio N° 0048-2025-IMARPE/GC - 24 de julio de 2025
-
-"INFORME DE AVANCE DE LA PRIMERA TEMPORADA PESCA DE ANCHOVETA (Engraulis ringens) 2025 EN LA REGIÓN NORTE-CENTRO DEL MAR PERUANO
-22 DE ABRIL AL 20 DE JULIO DE 2025 "
-  
-Link: https://cdn.www.gob.pe/uploads/document/file/8404573/6985333-informe-de-avance-de-la-primera-temporada-de-pesca-de-anchoveta-2025.pdf?v=1753371112
 
 En todos sus reportes evaluan: 
 - Condición reproductiva:  Índice Gonadosomático (IGS) que es un indicador de la actividad reproductiva, y  la fracción desovante
@@ -74,11 +68,23 @@ IMARPE/PE del 07 de mayo de 2025), incidencia de juveniles supera el 50% por dí
 
 **TODA PUBLICACIÓN OFICIAL SE REALIZA EN EL DIARIO EL PERUANO**
 
+https://www.gob.pe/institucion/produce/normas-legales
+
+
 - RESOLUCIÓN MINISTERIAL Nº 00368-2025-PRODUCE- 1 de noviembre de 2025
 
 Link: https://busquedas.elperuano.pe/dispositivo/NL/2454458-1
 
 - "El Límite Máximo Total de Captura Permisible provisional de la **Zona Norte – Centro** (LMTCP Norte – Centro) del recurso anchoveta (Engraulis ringens) y anchoveta blanca (Anchoa nasus) para consumo humano indirecto, correspondiente a la Segunda Temporada de Pesca 2025 de la Zona Norte – Centro autorizada en el artículo 1 de la presente Resolución Ministerial, es de **500,000 (quinientas mil) toneladas**" (Articulo 2)
+
+
+- Resolución Ministerial N.° 384-2025-PRODUCE- 13 de noviembre de 2025
+
+Link: [https://busquedas.elperuano.pe/dispositivo/NL/2454458-1](https://cdn.www.gob.pe/uploads/document/file/8989529/7394885-r-m-n-384-2025-produce.pdf?v=1763039334)
+
+- "El Límite Máximo Total de Captura Permisible de la Zona Norte - Centro (LMTCP Norte - Centro) del recurso anchoveta (Engraulis ringens) y anchoveta blanca (Anchoa nasus) para consumo humano indirecto, correspondiente a la Segunda Temporada de Pesca 2025 de la Zona
+Norte - Centro autorizadaa en el artículo 1 de la Resolución Ministerial N° 00368-2025-PRODUCE, es de un millón seiscientas treinta mil (1 630 000) toneladas **1 630 000 toneladas**" (Articulo 1)
+
 
 
 ### VEDAS ESTABLECIDAS:
